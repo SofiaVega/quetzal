@@ -25,6 +25,11 @@ def blog():
 def browse():
     return render_template('browse.html')
 
+@app.route('/nahuatl')
+def nahuatl():
+    return render_template('nahuatl.html')
+
+
 @app.route('/signup', methods=['GET', 'POST'])
 @orm.db_session
 def signup():
