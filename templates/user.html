@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<table class="table" style="margin-top: 2%">
+    <thead>
+        {% for user in result %}
+        <tr>
+            <th>UserId</th>
+            <td>{{user.id}}</td>
+
+            <th>Username</th>
+            <td>{{user.username}}</td>
+
+            <th>Password</th>
+            <td>{{user.password}}</td>
+        </tr>
+        {% endfor %}
+    </thead>
+</table>
+
+{% endblock %}

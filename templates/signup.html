@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Sign Up</h2>
+<form action="" method="POST">
+    <div class="columns is-multiline">
+        <div class="column is-12">
+            {{ form.username(placeholder="Username",class="input is-medium") }}
+        </div>
+    
+        <div class="column is-12">
+            {{ form.password(placeholder="Password",class="input is-medium",type="password") }}
+        </div>
+    
+        <br />
+        <div class="form-footer has-text-centered mt-10">
+            <button type="submit" class="button cta is-large primary-btn raised is-clear">Register</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
