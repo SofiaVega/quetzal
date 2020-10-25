@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>New lesson</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+</head>
+
+<body>
+    <section class="section">
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        Nahuatl lesson
+                    </h1>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="section">
+        <h2 class="subtitle">
+            Language
+        </h2>
+        <button class="button is-info">Nahuatl</button>
+        <button class="button">Maya</button>
+        <button class="button">Mixteco</button>
+        <button class="button">Zapoteco</button>
+    </section>
+
+    <section class="section">
+        <h2 class="subtitle">
+            Type of lesson
+        </h2>
+        <button class="button is-info">Vocabulary</button>
+        <button class="button">Grammar</button>
+        <button class="button">Examples</button>
+    </section>
+
+    <section class="section">
+        <h1 class="title">Content:</h1>
+        <div class="box">
+
+
+            {% for word in words %}
+
+            <p>Word in english: {{ word.english }}</p>
+            <p>Word in nahuatl: {{ word.nahuatl }}</p>
+            <hr />
+            {% endfor %}
+
+        </div>
+    </section>
+    <a class="button" href=browse>browse</a>
+</body>
+
+</html>

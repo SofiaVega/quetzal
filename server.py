@@ -7,6 +7,38 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'sofia-best-girl'
 
 
+words = [
+	{
+		"english": "woman",
+		"nahuatl": "cihuatl"
+	},
+	{
+		"english": "corn",
+		"nahuatl": "centli"
+	}
+]
+@app.route('/newLesson')
+def newLesson():
+    return render_template('newLesson.html')
+
+
+@app.route('/newWord', methods=['GET', 'POST'])
+def newWord():
+	word_english = request.form['word_english']
+	word_nahuatl = request.form['word_nahuatl']
+
+	new_word = {
+		"english": word_english,
+		"nahuatl": word_nahuatl
+	}
+	words.append(new_word)
+	return render_template('newLesson.html')
+
+
+@app.route('/nahuatlLesson')
+def nahuatlLesson():
+    return render_template('nahuatlLesson.html', words = words)
+
 @app.route('/browse')
 def browse():
     return render_template('browse.html')
