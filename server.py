@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = 'sofia-best-girl'
 
 @app.route('/')
 def home():
-    return "Sofia is amazing <3"
+    return render_template('browse.html')
 
 
 @app.route('/about')
@@ -17,9 +17,9 @@ def about():
     return "About page"
 
 
-@app.route('/blog')
-def blog():
-    return "This is a blog"
+@app.route('/blogtrue')
+def blogtrue():
+    return render_template('blogtrue.html')
 
 @app.route('/browse')
 def browse():
@@ -28,6 +28,10 @@ def browse():
 @app.route('/nahuatl')
 def nahuatl():
     return render_template('nahuatl.html')
+
+@app.route('/maya')
+def maya():
+    return render_template('maya.html')
 
 
 @app.route('/signup', methods=['GET', 'POST'])
