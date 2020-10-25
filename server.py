@@ -38,10 +38,6 @@ def newWord():
 @app.route('/nahuatlLesson')
 def nahuatlLesson():
     return render_template('nahuatlLesson.html', words = words)
-@app.route('/')
-def home():
-    return render_template('browse.html')
-
 
 @app.route('/about')
 def about():
@@ -63,6 +59,16 @@ def nahuatl():
 @app.route('/maya')
 def maya():
     return render_template('maya.html')
+
+
+@app.route('/', methods=['GET', 'POST'])
+@orm.db_session
+def home():
+    form = SignUpForm()
+    if form.is_submitted():
+        return render_template('home_page.html', form=form)
+
+    return render_template('signup.html', form=form)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
