@@ -38,6 +38,19 @@ def newWord():
 @app.route('/nahuatlLesson')
 def nahuatlLesson():
     return render_template('nahuatlLesson.html', words = words)
+@app.route('/')
+def home():
+    return render_template('browse.html')
+
+
+@app.route('/about')
+def about():
+    return "About page"
+
+
+@app.route('/blogtrue')
+def blogtrue():
+    return render_template('blogtrue.html')
 
 @app.route('/browse')
 def browse():
@@ -46,6 +59,10 @@ def browse():
 @app.route('/nahuatl')
 def nahuatl():
     return render_template('nahuatl.html')
+
+@app.route('/maya')
+def maya():
+    return render_template('maya.html')
 
 
 @app.route('/signup', methods=['GET', 'POST'])
