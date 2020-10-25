@@ -21,6 +21,14 @@ def about():
 def blog():
     return "This is a blog"
 
+@app.route('/browse')
+def browse():
+    return render_template('browse.html')
+
+@app.route('/nahuatl')
+def nahuatl():
+    return render_template('nahuatl.html')
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 @orm.db_session
